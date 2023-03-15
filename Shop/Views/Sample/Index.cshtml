@@ -1,0 +1,35 @@
+﻿@model Shop.Models.MyTest
+
+<h2>Мы на странице Sample</h2>
+<h2>@Model.Name</h2>
+<h2>@Model.Id</h2>
+
+@{
+    string hello = "Hello world!";
+    @: <h3>Заголовок: @hello</h3>
+
+    @*<text>@hello</text>*@
+    int x = 1;
+}
+
+<h3> Заголовок: @hello</h3>
+
+@if(x == 1)
+{
+    <p>X равен 1</p>
+}
+else
+{
+    <p>X не равен 1</p>
+}
+
+<h4>@ViewData["Message"]</h4>
+<h4>@ViewData["Text"]</h4>
+
+@await Html.PartialAsync("_GetMessage");
+
+<h4>@ViewBag.Message</h4>
+@{
+    ViewBag.Message = "text";
+}
+<h4>@ViewBag.Message</h4>
